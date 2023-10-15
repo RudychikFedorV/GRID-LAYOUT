@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;     /*применяется для изменения алгоритма расчёта ширины и высоты элемента. ширина блока складывается из ширины контента (width), значений отступов (margin), полей (padding) и границ (border).*/
+    padding: 0;     /* позволяет задать величину поля сразу для всех сторон элемента или определить поля только для указанных сторон. */
+    border: 0;  /* Толщина рамки задаётся свойством border, при этом если указано border: 0, то рамка не выводится. При других значениях border рисунок всегда имеет приоритет. */
+    }    
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;  /*устанавливает семейство шрифта, которое будет использоваться для оформления текста содержимого. */
+    }    
+img {
+    max-width: 100%;    /* устанавливает максимальную ширину элемента. */
+    }    
+a {
+    text-decoration: none;  /* устанавливает внешний вид декоративных линий в тексте. */
+    }    
+ul li {
+    list-style: none;   /*позволяет одновременно задать стиль маркера, его положение, а также изображение, которое будет использоваться в качестве маркера списка.*/
+    }
+    h3 {
+        text-align: center;
+        font-size: 22px;        
+    }
+
+    .wrapper {
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+        "header header header header header"
+        ". . . . ."
+        "menu . content . sidebar"
+        ". . . . ."
+        "footer footer footer footer footer";
+        grid-template-columns: 125px 5px 1fr 5px 125px;
+        grid-template-rows: 90px 5px 1fr 5px 90px;        
+    }
+    .header {
+        grid-area: header;
+        background-color: blueviolet;
+    }
+    .menu {
+        grid-area: menu;
+        background-color: blue;
+    }
+    .content {
+        grid-area: content;
+        background-color: antiquewhite;
+    }
+    .sidebar {
+        grid-area: sidebar;
+        background-color: aqua;
+    }
+    .footer {
+        grid-area: footer;
+        background-color: brown;
+    }
+    @media screen and (max-width: 468px) {
+        .wrapper {
+            display: grid;
+            height: 100vh;
+            grid-template-areas:
+            "header"
+            "."            
+            "menu"
+            "."             
+            "content"
+            "." 
+            "sidebar"
+            "." 
+            "footer";
+            grid-template-columns:1fr;
+            grid-template-rows: 80px 5px 80px 5px 1fr 5px 80px 5px 80px;            
+        }         
+    }
+
+    
